@@ -267,6 +267,7 @@ static sector_t swap_page_sector(struct page *page)
 {
 	return (sector_t)__page_file_index(page) << (PAGE_SHIFT - 9);
 }
+EXPORT_SYMBOL_GPL(swap_page_sector);
 
 void count_swpout_vm_event(struct page *page)
 {

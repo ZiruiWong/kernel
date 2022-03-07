@@ -2277,6 +2277,7 @@ sector_t map_swap_page(struct page *page, struct block_device **bdev)
 	entry.val = page_private(page);
 	return map_swap_entry(entry, bdev);
 }
+EXPORT_SYMBOL_GPL(map_swap_page);
 
 /*
  * Free all of a swapdev's extent information
@@ -3486,7 +3487,7 @@ struct swap_info_struct *page_swap_info(struct page *page)
 	swp_entry_t entry = { .val = page_private(page) };
 	return swp_swap_info(entry);
 }
-
+EXPORT_SYMBOL_GPL(page_swap_info);
 /*
  * out-of-line __page_file_ methods to avoid include hell.
  */
